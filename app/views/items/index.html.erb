@@ -3,5 +3,21 @@
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
 <div class="contents row">
-  <%= item_lists(@items) %>
+  <%# <%= item_lists(@items) %> 
+  <div class="place">
+    <div class="place-left-name">
+    <%= link_to "場所を追加してください" %>
+    </div>
+    <div class="place-right-name">
+    <%= link_to "場所を追加してください"%>
+    </div>
+  </div>
+  
+  <div class="place-box">
+    <div class="place-left-box">
+    </div>
+    <div class="place-right-box">
+    </div>
+  </div>
+
 </div>

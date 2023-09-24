@@ -1,6 +1,10 @@
 class Item < ApplicationRecord
-  validates :item_name, presence: true
+  
   belongs_to :user
+  has_one_attached :image
+
+  validates :item_name, presence: true
+  validates :content, presence: true, unless: :was_attached?
 
   def self.search(search)
     if search != ""
@@ -9,4 +13,9 @@ class Item < ApplicationRecord
       Item.all
     end
   end
+
+  def was_attached?
+    self.image.attached?
+  end
+  
 end

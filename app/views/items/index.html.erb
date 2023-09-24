@@ -13,11 +13,15 @@
     </div>
   </div>
   
+  <% @items.each do |item| %>
   <div class="place-box">
     <div class="place-left-box">
+    <%= image_tag item.image.variant(resize: '500x500'), class: 'item-image-left' if item.image.attached? %>
     </div>
     <div class="place-right-box">
+    <%= image_tag message.image.variant(resize: '500x500'), class: 'item-image-right' if message.image.attached? %>
     </div>
   </div>
+  <% end %>
 
 </div>
